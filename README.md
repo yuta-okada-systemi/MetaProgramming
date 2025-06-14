@@ -21,12 +21,11 @@ dotnet run -c Release --framework net9.0
 Mac
 MetaProgramming/MyBeanchMark.cs
 
--   Net481 の行をコメントアウト、NativeAot90 の行を有効化
+-   Net481 の行をコメントアウト
 
 ```Csharp
     [SimpleJob(RuntimeMoniker.Net90, baseline: true)]
-    //[SimpleJob(RuntimeMoniker.Net481)]      // windows only
-    [SimpleJob(RuntimeMoniker.NativeAot90)]     // mac only
+    [SimpleJob(RuntimeMoniker.Net481)]      // windows only
     public class MyBeanchMark {
 ```
 
@@ -48,11 +47,16 @@ dotnet run -c Release --framework net9.0
 
 -   Reflection
     -   手軽だが遅い
+    -   リフレクション情報自体を取得する処理は重い処理。キャッシュ化が必要
 -   ExpressoinTree
     -   動的にメソッドを生成できる。そこそこ手軽に使え、それなりに速度もでる
+    -   `Compile`は重い処理なので、生成したメソッドのキャッシュ化が必要
 -   IL 生成
     -   dotnet が生成する中間言語である IL を直接生成する
     -   メソッドに加え、クラス、アセンブリ自体（DLL）を動的に生成することも可能
+    -   `IL生成`は重い処理なので、生成メソッド、クラスのキャッシュ化が必要
+    -   注意事項としてネイティブ AOT ではサポートされていない
+        -   https://learn.microsoft.com/ja-jp/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8
 
 #### 番外編
 
@@ -60,7 +64,7 @@ dotnet run -c Release --framework net9.0
 
     -   内部的には「式木による動的コード生成」＋「生成したコードのキャッシュ」を行っている
 
--   イベントハンドラをフックするときなどは delegate を使う
+-   イベントハンドラをフックするときなどは delegate が使える
     -   https://learn.microsoft.com/ja-jp/dotnet/fundamentals/reflection/how-to-hook-up-a-delegate-using-reflection
 
 ### 参考サイト
