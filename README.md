@@ -15,12 +15,11 @@ Windows
 ```powershell
 cd .\MetaProgramming
 dotnet run -c Release --framework net9.0
-dotnet run -c Release --framework net481
 ```
 
 Mac
 
-```powershell
+```bash
 cd ./MetaProgramming
 dotnet run -c Release --framework net9.0
 ```
@@ -41,7 +40,7 @@ dotnet run -c Release --framework net9.0
     -   動的にメソッドを生成できる。そこそこ手軽に使え、それなりに速度もでる
 -   IL 生成
     -   dotnet が生成する中間言語である IL を直接生成する
-    -   メソッドに加え、クラスを動的に生成することも可能
+    -   メソッドに加え、クラス、アセンブリ自体（DLL）を動的に生成することも可能
 
 #### 番外編
 
