@@ -13,13 +13,25 @@
 Windows
 
 ```powershell
+dotnet restore
 cd .\MetaProgramming
 dotnet run -c Release --framework net9.0
 ```
 
 Mac
+MetaProgramming/MyBeanchMark.cs
+
+-   Net481 の行をコメントアウト、NativeAot90 の行を有効化
+
+```Csharp
+    [SimpleJob(RuntimeMoniker.Net90, baseline: true)]
+    //[SimpleJob(RuntimeMoniker.Net481)]      // windows only
+    [SimpleJob(RuntimeMoniker.NativeAot90)]     // mac only
+    public class MyBeanchMark {
+```
 
 ```bash
+dotnet restore
 cd ./MetaProgramming
 dotnet run -c Release --framework net9.0
 ```
