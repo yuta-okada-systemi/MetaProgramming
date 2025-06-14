@@ -19,14 +19,23 @@ dotnet run -c Release --framework net9.0
 ```
 
 Mac
-MetaProgramming/MyBeanchMark.cs
 
--   Net481 の行をコメントアウト
+-   `MetaProgramming/MyBeanchMark.cs`
+    -   Net481 の行をコメントアウト
 
 ```Csharp
     [SimpleJob(RuntimeMoniker.Net90, baseline: true)]
-    [SimpleJob(RuntimeMoniker.Net481)]      // windows only
+    //[SimpleJob(RuntimeMoniker.Net481)]      // windows only
     public class MyBeanchMark {
+```
+
+-   `MetaProgramming\MetaProgramming.csproj`
+    -   `TargetFramework`のコメントアウトを外す
+    -   `TargetFrameworks`の行をコメントアウト
+
+```xml
+    <TargetFramework>net9.0</TargetFramework>
+    <!-- <TargetFrameworks>net481;net9.0</TargetFrameworks> -->
 ```
 
 ```bash
