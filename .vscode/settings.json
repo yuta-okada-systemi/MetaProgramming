@@ -1,0 +1,14 @@
+{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "dotnet.useLegacyDotnetResolution": false,
+    //"dotnet.preferVisualStudioCodeFileSystemWatcher": true,
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "prettier.printWidth": 160,
+    "prettier.tabWidth": 4,
+}
