@@ -4,21 +4,11 @@
     // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
-        // {
-        //     "name": "C#: MyWellToolApp",
-        //     "type": "dotnet",
-        //     "request": "launch",
-        //     "projectPath": "${workspaceFolder}/MyWellToolApp/MyWellToolApp.csproj",
-        //     "launchConfigurationId": "vscode-maui"
-        // },
-        
         {
-            "name": "C#: MyWellToolApp2",
+            "name": "C#: MetaProgramming",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/MyWellToolApp2/MyWellToolApp2.csproj",
-            "launchConfigurationId": "vscode-maui"
+            "projectPath": "${workspaceFolder}/MetaProgramming/MetaProgramming.csproj"
         }
     ]
 }

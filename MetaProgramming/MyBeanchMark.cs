@@ -9,15 +9,8 @@ using BenchmarkDotNet.Jobs;
 
 namespace MetaProgramming {
     [SimpleJob(RuntimeMoniker.Net90, baseline: true)]
-    [SimpleJob(RuntimeMoniker.Net481)]
-    // #if WINDOWS
-    //     [SimpleJob(RuntimeMoniker.Net481)]
-    // #else
-    //     [SimpleJob(RuntimeMoniker.NativeAot90)]
-    // #endif
-    //[SimpleJob(RuntimeMoniker.Mono)]
-    [MemoryDiagnoser]
-    [DisassemblyDiagnoser]
+    [SimpleJob(RuntimeMoniker.Net481)]      // windows only
+    // [SimpleJob(RuntimeMoniker.NativeAot90)]     // mac only
     public class MyBeanchMark {
         private readonly SimpleImpl _simpleImpl = new SimpleImpl();
         private readonly RefrectionImpl _refrectionImpl = new RefrectionImpl();
