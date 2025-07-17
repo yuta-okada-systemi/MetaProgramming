@@ -10,6 +10,7 @@ namespace MetaProgramming {
             // System.Diagnostics.Debug.WriteLine(impl.Invoke());
 
             var summary = BenchmarkRunner.Run<MyBeanchMark>();
+            var dxoSummary = BenchmarkRunner.Run<MyBeanchMarkDxo>();
         }
     }
 }
